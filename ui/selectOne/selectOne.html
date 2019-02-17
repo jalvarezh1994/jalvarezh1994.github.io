@@ -17,7 +17,11 @@
   <div id="app">
     <ons-page>
       <div class="my-page">
-        <h1 class="instruction">{{newProps.question}}</h1>
+        <div class="title-container">
+          <h1 class="instruction">{{newProps.question}}</h1>
+        </div>
+        <br><br>
+        <div class="radio-container">
         <div v-for="respuesta in newProps.answers">
           <div style="margin-bottom: 1rem">
             <label class="radio-button radio-button--material" v-on:click='seleccion(respuesta.value)'>
@@ -30,8 +34,9 @@
             </label>
           </div>
         </div>
+      </div>
         <br>
-        <button class="button button--material" v-on:click='validar'>Validar</button>
+        <button id="btn" class="button button--material" v-on:click='validar'>Validar</button>
         <div v-bind:class="{ hidden: isHidden }" class="alert-dialog-mask alert-dialog-mask--material"></div>
         <div v-bind:class="{ hidden: isHidden }" class="alert-dialog alert-dialog--material">
           <div class="alert-dialog-container alert-dialog-container--material">
