@@ -1,5 +1,13 @@
 var app = new Vue({
   el: '#app',
+  created: function () {
+    fetch('../../json/questions.json').then(function(resp){return resp.json()}).then(
+      function(data){
+        const jsonProps = data.selectOne[1];
+        Vue.set(app.newProps,'answers',jsonProps.answers);
+        Vue.set(app.newProps,'question',jsonProps.question);
+      });
+  },
   data: {
     selected: false,
     newProps: {
@@ -10,21 +18,14 @@ var app = new Vue({
   methods: {
     seleccion (v) {
       this.selected = v;
+      console.log(this.selected);
     },
     validar () {
-      if (this.seleccionado) {
+      if (this.selected) {
         console.log('Respuesta verdadera')
       } else {
         console.log('Respuesta errónea')
       }
-    },
-    myFunc () {
-      fetch('../../json/questions.json').then(function(resp){return resp.json()}).then(
-        function(data){
-          const newProps = data.selectOne[0];
-          this.newProps = newProps;
-          console.log(this.newProps);
-        });
     }
   }
 

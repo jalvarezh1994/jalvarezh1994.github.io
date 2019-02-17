@@ -5,32 +5,15 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="./onsen/lib/css/onsenui.css" />
   <link rel="stylesheet" href="./onsen/lib/css/onsen-css-components.css" />
+  <script src="./onsen/lib/js/onsenui.min.js"></script>
 </head>
 
 <body ng-controller="AppContffroller">
-  <a href="./dragonbones.github.io.html">
-    <button class="button">Button</button>
-  </a>
-  <label class="switch">
-    <input type="checkbox" class="switch__input">
-    <div class="switch__toggle">
-      <div class="switch__handle"></div>
+  <ons-page>
+    <div style="padding:1rem">
+      <a href="/ui/selectOne/selectOne.html" class="button button--material">Select One</a>
     </div>
-  </label>
-  <label class="switch">
-    <input type="checkbox" class="switch__input" checked>
-    <div class="switch__toggle">
-      <div class="switch__handle"></div>
-    </div>
-  </label>
-  <label class="switch">
-    <input type="checkbox" class="switch__input" disabled>
-    <div class="switch__toggle">
-      <div class="switch__handle"></div>
-    </div>
-  </label>
-
-
+  </ons-page>
 </body>
 
 </html>

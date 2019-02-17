@@ -16,6 +16,24 @@
           "text": "<h12>"
         }
       ]
+    },
+    {
+      "question": "Seleccione la opcion válida",
+      "answers": [
+        {
+          "value": true,
+          "text": "<h1>"
+        },
+        {
+          "value": false,
+          "text": "<h9>"
+        },
+        {
+          "value": false,
+          "text": "<h12>"
+        }
+      ]
     }
   ]
+
 }
