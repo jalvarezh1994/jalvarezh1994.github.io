@@ -32,6 +32,22 @@
         </div>
         <br>
         <button class="button button--material" v-on:click='validar'>Validar</button>
+        <div v-bind:class="{ hidden: isHidden }" class="alert-dialog-mask alert-dialog-mask--material"></div>
+        <div v-bind:class="{ hidden: isHidden }" class="alert-dialog alert-dialog--material">
+          <div class="alert-dialog-container alert-dialog-container--material">
+            <div class="alert-dialog-title alert-dialog-title--material">
+              Resultado final
+            </div>
+            <div class="alert-dialog-content alert-dialog-content--material">
+              <span v-bind:class="{correct: selected}">
+                {{result}}
+              </span>
+            </div>
+            <div class="alert-dialog-footer alert-dialog-footer--material">
+              <button class="alert-dialog-button alert-dialog-button--material" v-on:click="hide">OK</button>
+            </div>
+          </div>
+        </div>
       </div>
     </ons-page>
   </div>

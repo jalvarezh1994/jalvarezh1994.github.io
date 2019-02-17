@@ -9,7 +9,10 @@ var app = new Vue({
       });
   },
   data: {
+    firstSelected: false,
     selected: false,
+    isHidden: true,
+    result: '',
     newProps: {
       answers: [],
       question: ''
@@ -17,15 +20,21 @@ var app = new Vue({
   },
   methods: {
     seleccion (v) {
+      this.firstSelected = true;
       this.selected = v;
-      console.log(this.selected);
     },
     validar () {
-      if (this.selected) {
-        console.log('Respuesta verdadera')
-      } else {
-        console.log('Respuesta errónea')
+      if (this.firstSelected) {
+        this.isHidden = false;
+        if (this.selected) {
+          this.result = 'Respuesta verdadera';
+        } else {
+          this.result = 'Respuesta errónea';
+        }
       }
+    },
+    hide () {
+      this.isHidden = true;
     }
   }
 
