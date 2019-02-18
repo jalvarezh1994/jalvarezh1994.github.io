@@ -44,3 +44,6 @@ input[type="radio"] :checked{
   border-radius: 5px;
   background-color: #033fff;
 }
+.titleImg{
+  text-align: center;
+}

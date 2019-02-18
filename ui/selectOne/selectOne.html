@@ -17,24 +17,29 @@
   <div id="app">
     <ons-page>
       <div class="my-page">
+
         <div class="title-container">
           <h1 class="instruction">{{newProps.question}}</h1>
         </div>
-        <br><br>
+        <br>
+        <div class="titleImg">
+          <img src="hola.png" width="100px" height="auto" alt="">
+        </div>
+        <br>
         <div class="radio-container">
-        <div v-for="respuesta in newProps.answers">
-          <div style="margin-bottom: 1rem">
-            <label class="radio-button radio-button--material" v-on:click='seleccion(respuesta.value)'>
-              <input type="radio" class="radio-button__input radio-button--material__input" name="r">
-              <div class="radio-button__checkmark radio-button--material__checkmark">
-              </div>
-              <span>
-                {{respuesta.text}}
-              </span>
-            </label>
+          <div v-for="respuesta in newProps.answers">
+            <div style="margin-bottom: 1rem">
+              <label class="radio-button radio-button--material" v-on:click='seleccion(respuesta.value)'>
+                <input type="radio" class="radio-button__input radio-button--material__input" name="r">
+                <div class="radio-button__checkmark radio-button--material__checkmark">
+                </div>
+                <span>
+                  {{respuesta.text}}
+                </span>
+              </label>
+            </div>
           </div>
         </div>
-      </div>
         <br>
         <button id="btn" class="button button--material" v-on:click='validar'>Validar</button>
         <div v-bind:class="{ hidden: isHidden }" class="alert-dialog-mask alert-dialog-mask--material"></div>
