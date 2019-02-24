@@ -13,13 +13,26 @@
 </head>
 <body>
   <div id="vue-content">
+    <ons-page>
+
     <div class="title-content">
         <h1 class="title">{{titleText}}</h1>
     </div>
+
 <div class="cards-content">
-  <div class="card1">{{card1}}</div>
-</div>
+    <br><br>
+  <div v-for="tag in objeto.arreglo">
+    <div class="card1">{{tag.card}}</div>
+    <br><br>
   </div>
+</div>
+<br><br>
+
+    <button class="button">Listo</button>
+
+</ons-page>
+  </div>
+
 <script src="dragCards.js"></script>
 </body>
 </html>
