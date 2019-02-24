@@ -19,32 +19,28 @@ var matching = new Vue({
     }
   },
   methods: {
+
     seleccionCol1 (tag) {
-      var btn1 = document.getElementById('btnCol1');
+      btn1 = document.getElementById('btnCol1');
+      btn2 = document.getElementById('btnCol2');
       this.seleccion1 = tag.value;
       if(this.seleccion1 === this.seleccion2){
-        console.log("Correcto");
         btn1.parentNode.removeChild(btn1);
+        btn2.parentNode.removeChild(btn2);
       }
-      else{
-        console.log("Incorrecto.");
-      }
+
     },
     seleccionCol2 (tag) {
       this.seleccion2 = tag.value;
-      var btn1 = document.getElementById('btnCol2');
+      btn1 = document.getElementById('btnCol1');
+      btn2 = document.getElementById('btnCol2');
       if(this.seleccion1 === this.seleccion2){
-        console.log("Correcto");
         btn1.parentNode.removeChild(btn1);
+        btn2.parentNode.removeChild(btn2);
       }
-      else{
-        console.log("Incorrecto.");
-      }
+
     },
-    mostrarSeleccion () {
-      console.log(this.seleccion1);
-      console.log(this.seleccion2);
-    }
+
   }
 })
 
