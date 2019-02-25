@@ -1,17 +1,14 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
-// Webpack CSS import
+//OnsenUi
 import 'onsenui/css/onsenui.css';
 import 'onsenui/css/onsen-css-components.css';
-
-// JS import
-import VueOnsen from 'vue-onsenui'; // This imports 'onsenui', so no need to import it separately
-
-Vue.use(VueOnsen); // VueOnsen set here as plugin to VUE. Done automatically if a call to window.Vue exists in the startup code.
+import VueOnsen from 'vue-onsenui';
+Vue.use(VueOnsen);
 
 new Vue({
   router,
