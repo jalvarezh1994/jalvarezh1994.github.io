@@ -1,47 +1,61 @@
 <template>
   <v-ons-page>
-    <v-ons-toolbar>
-      <div class="center">Title</div>
-    </v-ons-toolbar>
-
-    <p style="text-align: center">
-      <v-ons-button @click="$ons.notification.alert('Hello World!')">Click me!</v-ons-button>
-    </p>
-    <button @click="dbtest">hola</button>
+    <div class="page bg-blue">
+      <div class="container-fluid">
+        <img class="header-profile-logo" src="/logos/user-logo.png" alt>
+      </div>
+      <br>
+      <div class="container-fluid">
+        <div class="col-45">
+          <v-ons-button modifier="outline" class="button full-height">Lecciones</v-ons-button>
+        </div>
+        <div class="col-10"></div>
+        <div class="col-45">
+          <v-ons-button modifier="outline" class="button">Perfil</v-ons-button>
+          <v-ons-button modifier="outline" class="button">Estadísticas</v-ons-button>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <v-ons-button modifier="outline" class="button">Juegos</v-ons-button>
+      </div>
+      <div class="container-fluid">
+        <v-ons-button modifier="outline" class="button">Tienda</v-ons-button>
+      </div>
+    </div>
   </v-ons-page>
 </template>
 
 <script>
-import loki from "lokijs";
-import { persistenceAdapters } from "lokijs";
-
 export default {
   name: "mainMenu",
-  methods: {
-    dbtest() {
-      const lfsa = persistenceAdapters.localStorage;
-
-      var adapter = new lfsa();
-      var db = new loki("sandbox.db", {
-        adapter: adapter,
-        autoload: true,
-        autoloadCallback: databaseInitialize,
-        autosave: true,
-        autosaveInterval: 4000
-      });
-
-      function databaseInitialize() {
-        var log = db.getCollection("log");
-        if (log === null) {
-          db.addCollection("log");
-        }
-        // log some random event data as part of our example
-        console.log('log.find():', log.find());
-      }
-    },
-    dbread () {
-
-    }
-  }
+  methods: {}
 };
 </script>
+
+<style scoped>
+.header-profile-logo {
+  width: 3rem;
+  height: 3rem;
+}
+.bg-blue {
+  background-color: #165a6b !important;
+}
+.button {
+  color: white;
+  border-color: white;
+  width: 100%;
+  border-radius: 10px;
+}
+.col-45 {
+  width: 45% !important;
+  min-width: 45%;
+}
+.col-10 {
+  width: 10% !important;
+  min-width: 10%;
+}
+.full-height {
+  height: 100% !important;
+  min-height: 100%;
+}
+</style>
