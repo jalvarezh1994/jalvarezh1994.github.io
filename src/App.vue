@@ -1,11 +1,14 @@
 <template>
-  <div id="app" class="full-height">
-    <router-view/>
-  </div>
+  <router-view/>
 </template>
 
 <style>
-.full-widt {
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+.full-width {
   width: 100% !important;
   min-width: 100%;
 }
@@ -21,8 +24,58 @@
   padding: 0px 1rem;
 }
 .page {
+  min-height: 100%;
   max-width: 100%;
-  padding: 1rem 1.5rem;
   overflow-x: hidden;
+}
+.wrapper {
+  padding: 1rem 1.5rem;
+}
+.btn {
+  background: transparent;
+  color: white;
+  border: solid;
+  border-width: 1.2px;
+  border-color: white;
+  width: 100%;
+  border-radius: 25px;
+}
+.btn:focus {
+  background: transparent;
+  color: white;
+  border: solid;
+  border-width: 1.2px;
+  border-color: white;
+  outline: none;
+  width: 100%;
+  border-radius: 25px;
+}
+.btn:active {
+  background: transparent;
+  color: white;
+  border: solid;
+  border-width: 1.2px;
+  border-color: white;
+  width: 100%;
+  border-radius: 25px;
+  background-color: teal;
+}
+@font-face {
+  font-family: "IBMPlex"; /*a name to be used later*/
+  src: url("/fonts/IBMPlexMono-BoldItalic.ttf"); /*URL to font*/
+}
+.menu-font {
+  font-family: "IBMPlex";
+  font-size: 1.1rem;
+}
+.row {
+  display: flex;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
+.self-center {
+  align-self: center;
 }
 </style>
