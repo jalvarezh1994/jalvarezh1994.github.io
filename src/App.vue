@@ -2,11 +2,15 @@
   <router-view/>
 </template>
 
-<style>
+<style lang="scss">
 html,
 body {
   height: 100%;
   margin: 0;
+}
+a {
+  color: white;
+  text-decoration: none;
 }
 .full-width {
   width: 100% !important;
@@ -77,5 +81,8 @@ body {
 }
 .self-center {
   align-self: center;
+}
+.flexwrap {
+  flex-wrap: wrap !important;
 }
 </style>

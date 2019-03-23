@@ -1,20 +1,22 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import mainMenu from './views/mainMenu.vue';
+import Vue from 'vue';
+import Router from 'vue-router';
+import MainMenu from './views/MainMenu.vue';
+import LessonBubble from './components/LessonBubble.vue';
 
-Vue.use(Router)
+Vue.use(Router);
+Vue.component('LessonBubble', LessonBubble);
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: mainMenu
+      name: 'mainMenu',
+      component: MainMenu
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('./views/mainMenu.vue')
+      path: '/lessons',
+      name: 'lessons',
+      component: () => import('./views/Lessons.vue')
     }
   ]
 })

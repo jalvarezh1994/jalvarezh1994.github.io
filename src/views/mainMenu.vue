@@ -10,11 +10,13 @@
       <div class="container-fluid mb-2">
         <div class="col-45">
           <button class="btn full-height menu-font p-1">
-            <div class="col">
-              <img src="/logos/lessons.svg" class="menu-logo-lessons">
-              <br>
-              <span>Lecciones</span>
-            </div>
+            <router-link to="/lessons">
+              <div class="col">
+                <img src="/logos/lessons.svg" class="menu-logo-lessons">
+                <br>
+                <span>Lecciones</span>
+              </div>
+            </router-link>
           </button>
         </div>
         <div class="col-10"></div>
