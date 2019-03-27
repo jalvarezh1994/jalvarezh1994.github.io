@@ -1,18 +1,18 @@
 <template>
   <div>
-    <img class="image-content" v-bind:src="videoSource">
+    <video class="video-content" controls v-bind:src="videoSource"></video>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ImageContent",
-  props: ["imageSource"]
+  name: "VideoContent",
+  props: ["videoSource"]
 };
 </script>
 
 <style>
-.image-content {
+.video-content {
   max-width: 100%;
 }
 </style>

@@ -6,6 +6,8 @@ import GoBack from './components/GoBack.vue';
 import AccountButton from './components/AccountButton.vue';
 import TextContent from './components/TextContent.vue';
 import ImageContent from './components/ImageContent.vue';
+import VideoContent from './components/VideoContent.vue';
+import AnimationContent from './components/AnimationContent.vue';
 import StarRating from 'vue-star-rating';
 
 Vue.use(Router);
@@ -16,6 +18,8 @@ Vue.component('AccountButton', AccountButton);
 //Lesson Content
 Vue.component('TextContent', TextContent);
 Vue.component('ImageContent', ImageContent);
+Vue.component('VideoContent', VideoContent);
+Vue.component('AnimationContent', AnimationContent);
 
 export default new Router({
   routes: [

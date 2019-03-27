@@ -8,8 +8,11 @@
         <div v-if="isImage(contentBlock)">
           <ImageContent v-bind:imageSource="contentBlock.imageSource"/>
         </div>
+        <div v-if="isVideo(contentBlock)">
+          <VideoContent v-bind:videoSource="contentBlock.videoSource"/>
+        </div>
         <div v-if="isAnimation(contentBlock)">
-          <div>soy animación</div>
+          <AnimationContent v-bind:animationSource="contentBlock.animationSource"/>
         </div>
         <div v-if="isInteractive(contentBlock)">
           <div>soy interactivo</div>
@@ -42,7 +45,8 @@ export default {
           videoSource: "/subjects/subjectId/lessons/id/videos/videoId.mp4"
         },
         {
-          contentType: "animation"
+          contentType: "animation",
+          animationSource: "/subjects/subjectId/lessons/id/animations/animationId/index.html"
         },
         {
           contentType: "interactive"
@@ -57,6 +61,9 @@ export default {
     },
     isImage(contentBlock) {
       return contentBlock.contentType === "image";
+    },
+    isVideo(contentBlock) {
+      return contentBlock.contentType === "video";
     },
     isAnimation(contentBlock) {
       return contentBlock.contentType === "animation";
