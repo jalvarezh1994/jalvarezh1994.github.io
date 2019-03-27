@@ -1,25 +1,26 @@
 <template>
   <div class="page bg-blue full-height">
     <div class="wrapper">
-      <div class="container-fluid mb-2">
-        <button class="btn no-border header-profile-logo no-padding">
-          <img class="menu-logo-account" src="/logos/user-logo.svg" alt>
-        </button>
-      </div>
-      <br>
+      <AccountButton/>
       <!-- Topic -->
       <div v-for="topic in topics" class="topic-container">
         <button class="btn topic">{{topic.topicTitle}}</button>
         <div class="row" style="flex-wrap: wrap">
           <!-- Lesson -->
-          <LessonBubble v-for="(lesson, index) in topic.lessons" v-bind:lesson="lesson" v-bind:index="index"/>
+          <LessonBubble
+            v-for="(lesson, index) in topic.lessons"
+            v-bind:lesson="lesson"
+            v-bind:index="index"
+          />
         </div>
       </div>
     </div>
+    <GoBack/>
   </div>
 </template>
 
 <script>
+import GoBack from "../components/GoBack.vue";
 import LessonBubble from "../components/LessonBubble.vue";
 export default {
   name: "mainMenu",
@@ -106,9 +107,10 @@ export default {
 }
 .topic-container {
   margin-bottom: 2rem;
+  word-break: break-word;
 }
 .topic {
-  height: 2rem !important;
+  font-size: 1.4rem;
 }
 .header-profile-logo {
   width: 3rem;

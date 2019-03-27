@@ -1,23 +1,18 @@
 <template>
   <div class="page bg-blue full-height">
     <div class="wrapper">
-      <div class="container-fluid mb-2">
-        <button class="btn no-border header-profile-logo no-padding">
-          <img class="menu-logo-account" src="/logos/user-logo.svg" alt>
-        </button>
-      </div>
-      <br>
+      <AccountButton/>
       <div class="container-fluid mb-2">
         <div class="col-45">
-          <button class="btn full-height menu-font p-1">
-            <router-link to="/lessons">
+          <router-link to="/lessons" class="full-height">
+            <button class="btn full-height menu-font p-1">
               <div class="col">
                 <img src="/logos/lessons.svg" class="menu-logo-lessons">
                 <br>
                 <span>Lecciones</span>
               </div>
-            </router-link>
-          </button>
+            </button>
+          </router-link>
         </div>
         <div class="col-10"></div>
         <div class="col-45">
@@ -41,7 +36,7 @@
         </button>
       </div>
     </div>
-    <button class="btn footer menu-font no-border h-4-3">
+    <button class="no-border btn-store footer menu-font h-4-3">
       <div class="row center-xy">
         <img src="/logos/store.svg" class="menu-logo-left mr-1">
         <span>Tienda</span>
@@ -58,12 +53,38 @@ export default {
 </script>
 
 <style scoped>
+.btn-store {
+  background: transparent;
+  color: white;
+  border: solid;
+  border-width: 1.2px;
+  border-color: white;
+  width: 100%;
+  border-radius: 0px;
+}
+.btn-store:focus {
+  background: transparent;
+  color: white;
+  border: solid;
+  border-width: 1.2px;
+  border-color: white;
+  outline: none;
+  width: 100%;
+  border-radius: 0px;
+}
+.btn-store:active {
+  background: transparent;
+  color: white;
+  border: solid;
+  border-width: 1.2px;
+  border-color: white;
+  width: 100%;
+  border-radius: 0px;
+  background-color: teal;
+}
 .header-profile-logo {
   width: 3rem;
   height: 3rem;
-}
-.bg-blue {
-  background-color: #165a6b !important;
 }
 .col-45 {
   width: 45% !important;
@@ -112,7 +133,7 @@ export default {
   align-self: center;
 }
 .no-border {
-  border: 0px;
+  border: none !important;
 }
 .h-4 {
   height: 5.5rem;

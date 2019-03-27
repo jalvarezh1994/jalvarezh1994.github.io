@@ -85,4 +85,7 @@ a {
 .flexwrap {
   flex-wrap: wrap !important;
 }
+.bg-blue {
+  background-color: #165a6b !important;
+}
 </style>

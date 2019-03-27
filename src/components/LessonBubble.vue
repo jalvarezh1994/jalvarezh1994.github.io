@@ -11,10 +11,21 @@
       <div class="col border-right" style="width: 50%"></div>
       <div class="col" style="width: 50%"></div>
     </div>
-    <button class="btn lesson self-center">
-      {{lesson.lessonTitle}}
+    <button class="btn lesson self-center" @click="goToLesson">
+      <span class="lesson-title">{{lesson.lessonTitle}}</span>
       <br>
-      {{lesson.lessonScore}}
+      <br>
+      <StarRating
+        v-bind:star-size="starRatingProps.starSize"
+        v-bind:show-rating="starRatingProps.showRating"
+        v-bind:max-rating="starRatingProps.maxRating"
+        v-bind:read-only="starRatingProps.readOnly"
+        v-bind:rounded-corners="starRatingProps.roundedCorners"
+        v-bind:rating="lesson.lessonScore"
+        active-color="#ffc65a"
+        border-color="#00"
+        class="my-stars"
+      />
     </button>
   </div>
 </template>
@@ -24,7 +35,15 @@ export default {
   name: "LessonBubble",
   props: ["lesson", "index"],
   data: function() {
-    return {};
+    return {
+      starRatingProps: {
+        starSize: 25,
+        showRating: false,
+        maxRating: 3,
+        readOnly: true,
+        roundedCorners: true
+      }
+    };
   },
   computed: {
     diag: function() {
@@ -49,15 +68,32 @@ export default {
     centerLine() {
       const bool = this.index % 2 === 0;
       return {
-        "border-right": bool
+        "border-right": bool,
+        "mt-2": !bool,
+        "mt-4": bool
       };
     }
   },
-  methods: {}
+  methods: {
+    goToLesson() {
+      this.$router.push("/lesson");
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
+.lesson-title {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+}
+.my-stars {
+  justify-content: center !important;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
 .border-right {
   border: solid white;
   border-left: 0px;
@@ -65,7 +101,8 @@ export default {
   border-bottom: 0px;
 }
 .d-none {
-  display: none;
+  display: none !important;
+  color: transparent;
 }
 .lesson {
   border-radius: 100%;
