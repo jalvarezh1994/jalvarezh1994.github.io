@@ -35,7 +35,11 @@ export default {
         },
         {
           contentType: "image",
-          imageSource: '/lessons/id/images/imageId.jpg'
+          imageSource: "/subjects/subjectId/lessons/id/images/imageId.jpg"
+        },
+        {
+          contentType: "video",
+          videoSource: "/subjects/subjectId/lessons/id/videos/videoId.mp4"
         },
         {
           contentType: "animation"

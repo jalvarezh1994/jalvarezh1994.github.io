@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="image-content" v-bind:src="imageSource">
+    <img class="image-content" v-bind:src="videoSource">
   </div>
 </template>
 
