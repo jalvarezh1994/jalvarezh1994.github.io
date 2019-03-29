@@ -1,13 +1,22 @@
 <template>
   <div>
-    <video class="video-content" controls v-bind:src="videoSource"></video>
+    <video class="video-content" controls v-bind:src="src"></video>
   </div>
 </template>
 
 <script>
 export default {
   name: "VideoContent",
-  props: ["videoSource"]
+  props: ["videoId"],
+  computed: {
+    src: function() {
+      const getters = this.$store.getters;
+      const src = `/subjects/${getters.getSubjectId}/${getters.getTopicId}/${
+        getters.getLessonId
+      }/${getters.getPageId}/videos/${this._props.videoId}`;
+      return src;
+    }
+  }
 };
 </script>
 

@@ -11,6 +11,7 @@
             v-for="(lesson, index) in topic.lessons"
             v-bind:lesson="lesson"
             v-bind:index="index"
+            v-bind:topicId="topic.topicId"
           />
         </div>
       </div>
@@ -24,44 +25,14 @@ import GoBack from "../components/GoBack.vue";
 import LessonBubble from "../components/LessonBubble.vue";
 export default {
   name: "mainMenu",
+  computed: {
+    topics() {
+      const returnValue = this.$store.getters.getTopics;
+      return returnValue;
+    }
+  },
   data: function() {
-    return {
-      topics: [
-        {
-          topicTitle: "HTML",
-          lessons: [
-            {
-              lessonTitle: "Etiquetas",
-              lessonScore: 3
-            },
-            {
-              lessonTitle: "Etiquetas",
-              lessonScore: 3
-            },
-            {
-              lessonTitle: "Etiquetas",
-              lessonScore: 3
-            },
-            {
-              lessonTitle: "Etiquetas",
-              lessonScore: 3
-            },
-            {
-              lessonTitle: "Etiquetas",
-              lessonScore: 3
-            },
-            {
-              lessonTitle: "Etiquetas",
-              lessonScore: 3
-            },
-            {
-              lessonTitle: "Atributos",
-              lessonScore: 2
-            }
-          ]
-        }
-      ]
-    };
+    return {};
   },
   methods: {
     getLessons(lessons) {

@@ -2,7 +2,7 @@
   <div class="page bg-blue full-height">
     <div class="wrapper full-height">
       <div style="height:25%"></div>
-      <button class="btn lesson-button" style="height:25%" @click="goToLessonContent">Contenido</button>
+      <button class="btn lesson-button" style="height:25%" @click="goToLessonPage">Contenido</button>
       <button class="btn lesson-button" style="height:25%" @click="goToLessonExcercise">Ejercicios</button>
       <div style="height:25%"></div>
       <GoBack/>
@@ -14,8 +14,9 @@
 export default {
   name: "Lesson",
   methods: {
-    goToLessonContent() {
-      this.$router.push("/lessonContent");
+    goToLessonPage() {
+      this.$store.commit("setPageId", "0");
+      this.$router.push("/lessonPage");
     },
     goToLessonExcercise() {
       this.$router.push("/lessonExcercise");

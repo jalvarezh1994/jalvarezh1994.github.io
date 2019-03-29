@@ -6,13 +6,13 @@
           <TextContent v-bind:text="contentBlock.text"/>
         </div>
         <div v-if="isImage(contentBlock)">
-          <ImageContent v-bind:imageSource="contentBlock.imageSource"/>
+          <ImageContent v-bind:imageId="contentBlock.imageId"/>
         </div>
         <div v-if="isVideo(contentBlock)">
-          <VideoContent v-bind:videoSource="contentBlock.videoSource"/>
+          <VideoContent v-bind:videoId="contentBlock.videoId"/>
         </div>
         <div v-if="isAnimation(contentBlock)">
-          <AnimationContent v-bind:animationSource="contentBlock.animationSource"/>
+          <AnimationContent v-bind:animationId="contentBlock.animationId"/>
         </div>
         <div v-if="isInteractive(contentBlock)">
           <div>soy interactivo</div>
@@ -31,28 +31,17 @@ export default {
   computed: {
     content: function() {
       // contentType can be text, image, animation or interactive
-      const contentArray = [
-        {
-          contentType: "text",
-          text: "Welcome to <br/> Arrow GTP"
-        },
-        {
-          contentType: "image",
-          imageSource: "/subjects/subjectId/lessons/id/images/imageId.jpg"
-        },
-        {
-          contentType: "video",
-          videoSource: "/subjects/subjectId/lessons/id/videos/videoId.mp4"
-        },
-        {
-          contentType: "animation",
-          animationSource: "/subjects/subjectId/lessons/id/animations/animationId/index.html"
-        },
-        {
-          contentType: "interactive"
-        }
-      ];
-      return contentArray;
+      const topic = this.$store.getters.getTopics.find(
+        v => v.topicId === this.$store.getters.getTopicId
+      );
+      const lesson = topic.lessons.find(
+        v => v.lessonId === this.$store.getters.getLessonId
+      );
+      const page = lesson.pages.find(
+        v => v.pageId === this.$store.getters.getPageId
+      );
+      const returnValue = page.content;
+      return returnValue;
     }
   },
   methods: {

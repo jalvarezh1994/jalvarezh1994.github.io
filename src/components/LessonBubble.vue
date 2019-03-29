@@ -11,7 +11,7 @@
       <div class="col border-right" style="width: 50%"></div>
       <div class="col" style="width: 50%"></div>
     </div>
-    <button class="btn lesson self-center" @click="goToLesson">
+    <button class="btn lesson self-center" @click="goToLesson(topicId, lesson)">
       <span class="lesson-title">{{lesson.lessonTitle}}</span>
       <br>
       <br>
@@ -33,7 +33,7 @@
 <script>
 export default {
   name: "LessonBubble",
-  props: ["lesson", "index"],
+  props: ["lesson", "index", "topicId"],
   data: function() {
     return {
       starRatingProps: {
@@ -76,6 +76,8 @@ export default {
   },
   methods: {
     goToLesson() {
+      this.$store.commit("setTopicId", this.topicId);
+      this.$store.commit("setLessonId", this.lesson.lessonId);
       this.$router.push("/lesson");
     }
   }

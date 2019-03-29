@@ -4,15 +4,13 @@
       <AccountButton/>
       <div class="container-fluid mb-2">
         <div class="col-45">
-          <router-link to="/lessons" class="full-height">
-            <button class="btn full-height menu-font p-1">
-              <div class="col">
-                <img src="/logos/lessons.svg" class="menu-logo-lessons">
-                <br>
-                <span>Lecciones</span>
-              </div>
-            </button>
-          </router-link>
+          <button class="btn full-height menu-font p-1" @click="goToLessons()">
+            <div class="col">
+              <img src="/logos/lessons.svg" class="menu-logo-lessons">
+              <br>
+              <span>Lecciones</span>
+            </div>
+          </button>
         </div>
         <div class="col-10"></div>
         <div class="col-45">
@@ -48,7 +46,14 @@
 <script>
 export default {
   name: "mainMenu",
-  methods: {}
+  created: function() {
+    this.$store.commit("setSubjectId", "0");
+  },
+  methods: {
+    goToLessons() {
+      this.$router.push("/lessons");
+    }
+  }
 };
 </script>
 
