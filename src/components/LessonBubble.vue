@@ -78,7 +78,9 @@ export default {
     goToLesson() {
       this.$store.commit("setTopicId", this.topicId);
       this.$store.commit("setLessonId", this.lesson.lessonId);
-      this.$router.push("/lesson");
+      setTimeout(() => {
+        this.$router.push("/lesson");
+      }, 150);
     }
   }
 };

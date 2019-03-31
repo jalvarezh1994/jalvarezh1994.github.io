@@ -11,7 +11,10 @@ export default new Vuex.Store({
     topics: [],
     topicId: "",
     lessonId: "",
-    pageId: ""
+    pageId: "",
+    lessonSuccess: 0,
+    lessonFail: 0,
+    lessonTotal: 0
   },
   mutations: {
     setSubjectId(state, subjectId) {
@@ -33,6 +36,15 @@ export default new Vuex.Store({
     },
     setPageId(state, pageId) {
       state.pageId = pageId;
+    },
+    setLessonSuccess(state, lessonSuccess) {
+      state.lessonSuccess = lessonSuccess
+    },
+    setLessonFail(state, lessonFail) {
+      state.lessonFail = lessonFail
+    },
+    setLessonTotal(state, lessonTotal) {
+      state.lessonTotal = lessonTotal;
     }
   },
   getters: {
@@ -57,5 +69,14 @@ export default new Vuex.Store({
     getPageId(state) {
       return state.pageId;
     },
+    getLessonSuccess(state) {
+      return state.lessonSuccess;
+    },
+    getLessonFail(state) {
+      return state.lessonFail;
+    },
+    getLessonTotal(state) {
+      return state.lessonTotal;
+    }
   }
 })

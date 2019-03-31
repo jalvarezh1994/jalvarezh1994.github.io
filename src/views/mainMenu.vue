@@ -47,11 +47,13 @@
 export default {
   name: "mainMenu",
   created: function() {
-    this.$store.commit("setSubjectId", "0");
+    this.$store.commit("setSubjectId", "1");
   },
   methods: {
     goToLessons() {
-      this.$router.push("/lessons");
+      setTimeout(() => {
+        this.$router.push("/lessons");
+      }, 150);
     }
   }
 };

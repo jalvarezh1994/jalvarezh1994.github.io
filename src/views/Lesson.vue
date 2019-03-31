@@ -16,10 +16,14 @@ export default {
   methods: {
     goToLessonPage() {
       this.$store.commit("setPageId", "0");
-      this.$router.push("/lessonPage");
+      setTimeout(() => {
+        this.$router.push("/lessonPage");
+      }, 150);
     },
     goToLessonExcercise() {
-      this.$router.push("/lessonExcercise");
+      setTimeout(() => {
+        this.$router.push("/lessonExcercise");
+      }, 150);
     }
   }
 };
