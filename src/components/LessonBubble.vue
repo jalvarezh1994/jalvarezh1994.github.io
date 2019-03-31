@@ -21,7 +21,7 @@
         v-bind:max-rating="starRatingProps.maxRating"
         v-bind:read-only="starRatingProps.readOnly"
         v-bind:rounded-corners="starRatingProps.roundedCorners"
-        v-bind:rating="lesson.lessonScore"
+        v-bind:rating="getLessonScore"
         active-color="#ffc65a"
         border-color="#00"
         class="my-stars"
@@ -72,6 +72,22 @@ export default {
         "mt-2": !bool,
         "mt-4": bool
       };
+    },
+    getLessonScore() {
+      const scores = window.localStorage.getItem("scores");
+      if (scores && scores !== "undefined" && scores !== "null") {
+        const parsedScores = JSON.parse(scores);
+        const lastScore = parsedScores.find(v => {
+          return v.lessonId === this.lesson.lessonId;
+        });
+        if (lastScore) {
+          return lastScore.score;
+        } else {
+          return 0;
+        }
+      } else {
+        return 0;
+      }
     }
   },
   methods: {

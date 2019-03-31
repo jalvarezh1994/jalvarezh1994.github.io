@@ -61,6 +61,11 @@ export default new Router({
       path: '/lessonResult',
       name: 'lessonResult',
       component: () => import('./views/LessonResult.vue')
-    }
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: () => import('./views/Profile.vue')
+    },
   ]
 })

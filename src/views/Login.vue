@@ -44,6 +44,8 @@ export default {
           if (res.data.error) {
             //
           } else {
+            window.localStorage.setItem("userId", res.data.user._id);
+            console.log(res.data);
             this.$router.push("/mainMenu");
           }
         })

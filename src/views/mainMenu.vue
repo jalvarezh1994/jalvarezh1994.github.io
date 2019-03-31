@@ -14,7 +14,7 @@
         </div>
         <div class="col-10"></div>
         <div class="col-45">
-          <button class="btn full-width mb-1 menu-font p-1">
+          <button @click="goToProfile" class="btn full-width mb-1 menu-font p-1">
             <img src="/logos/profile.svg" class="menu-logo-center">
             <br>Perfil
           </button>
@@ -53,6 +53,11 @@ export default {
     goToLessons() {
       setTimeout(() => {
         this.$router.push("/lessons");
+      }, 150);
+    },
+    goToProfile() {
+      setTimeout(() => {
+        this.$router.push("/profile");
       }, 150);
     }
   }
