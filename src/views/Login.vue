@@ -3,22 +3,32 @@
     <div class="wrapper" style="text-align:center">
       <img src="/svg/vincet-logo.svg" class="vincet-logo">
       <br>
-      <div class="greeting-text">
-        Bienvenidos a
-        <span>VINCET</span>
+      <div class="greeting text">
+        Bienvenido a
+        <span class="vincet-text">VINCET</span>
       </div>
       <br>
       <form @submit="login">
-        <input class="input" type="text" id="email">
+        <div class="input rounded-border margin-centered">
+          <span class="input-text text" contenteditable="true"></span>
+        </div>
         <br>
-        <input class="input" type="password" id="pass">
+        <div class="input rounded-border margin-centered">
+          <span class="input-text text" contenteditable="true" type="password"></span>
+        </div>
         <br>
-        <button class="sign-in-btn" type="submit">
-          <span style>Ingresar</span>
-        </button>
-        <br>O
-        <div>Registrarse</div>
+        <div class="sign-in-btn rounded-border margin-centered" type="submit">
+          <span class="text btn-text">INGRESAR</span>
+        </div>
       </form>
+      <br>
+      <div class="text">
+        O
+        <br>
+        <br>
+        <span class="register">REGISTRARSE</span>
+      </div>
+      <br>
     </div>
     <footer class="footer"></footer>
   </div>
@@ -65,17 +75,25 @@ export default {
 .bg-gradient {
   background: linear-gradient(to right, #19b7cb 15%, #39a935 54%);
 }
+.rounded-border {
+  border-radius: 50px;
+}
+.margin-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
 .input {
   width: 80%;
   border: 3px solid white;
   height: 3rem;
-  border-radius: 20px;
+}
+.input-text:focus {
+  outline: none;
 }
 .sign-in-btn {
-  width: 81%;
+  width: 80%;
   background: linear-gradient(to right, #262262 0%, #662d91 100%);
-  border: 3px;
-  border-color: linear-gradient(to right, #262262 0%, #662d91 100%);
+  border: 3px solid rgba(255, 255, 255, 0);
   height: 3rem;
 }
 .sign-in-btn span {
@@ -84,12 +102,19 @@ export default {
   display: flex;
   font-size: 1.5rem;
 }
+.btn-text {
+  display: flex;
+  width: 100%;
+  height: 100% !important;
+  justify-content: center;
+  align-items: center;
+}
 .footer {
   background: linear-gradient(to right, #262262 0%, #662d91 100%);
   height: 1rem;
   width: 100%;
   bottom: 0px;
-  position: absolute;
+  position: fixed;
 }
 .vincet-logo {
   display: flex;
@@ -103,14 +128,23 @@ export default {
   margin-bottom: 1rem;
   font-family: Arial, Helvetica, sans-serif;
 }
-.greeting-text {
-  font-family: "Lato-Regular";
+.greeting {
   font-size: 1.75rem;
   color: #3d2b57;
-  span {
+  font-weight: bold;
+  .vincet-text {
     font-family: "Zian";
     font-size: 1.75rem;
+    font-weight: normal;
   }
+}
+.text {
+  font-family: "Lato-Regular";
+}
+.register {
+  color: #3d2b57;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 @font-face {
   font-family: "Lato-Regular";
