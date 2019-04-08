@@ -9,12 +9,18 @@
       </div>
       <br>
       <form @submit="login">
-        <div class="input rounded-border margin-centered">
-          <span class="input-text text" contenteditable="true"></span>
+        <div class="input-wrapper rounded-border margin-centered">
+          <div class="input-content">
+            <img class="input-logo" src="/svg/user.svg">
+            <input class="input input-text text" type="text" placeholder="E-Mail">
+          </div>
         </div>
         <br>
-        <div class="input rounded-border margin-centered">
-          <span class="input-text text" contenteditable="true" type="password"></span>
+        <div class="input-wrapper rounded-border margin-centered">
+          <div class="input-content">
+            <img class="input-logo" src="/svg/lock.svg">
+            <input class="input input-text text" type="password" placeholder="Password">
+          </div>
         </div>
         <br>
         <div class="sign-in-btn rounded-border margin-centered" type="submit">
@@ -28,7 +34,6 @@
         <br>
         <span class="register">REGISTRARSE</span>
       </div>
-      <br>
     </div>
     <footer class="footer"></footer>
   </div>
@@ -83,12 +88,33 @@ export default {
   margin-right: auto;
 }
 .input {
+  background: transparent !important;
+  border: none !important;
+  height: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 100%;
+}
+.input:focus {
+  outline: none;
+}
+.input-text {
+  color: white;
+  font-size: 1.5rem;
+}
+.input-wrapper {
   width: 80%;
   border: 3px solid white;
   height: 3rem;
 }
-.input-text:focus {
-  outline: none;
+.input-content {
+  display: flex;
+  height: 100%;
+  padding-left: 5%;
+  align-items: center;
+}
+.input-logo {
+  height: 60%;
 }
 .sign-in-btn {
   width: 80%;
