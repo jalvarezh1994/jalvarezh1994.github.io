@@ -7,26 +7,15 @@ html,
 body {
   height: 100%;
   margin: 0;
-  color: white;
+  font-family: "Lato-Regular";
+  user-select: none;
 }
 a {
-  color: white;
   text-decoration: none;
-}
-.full-width {
-  width: 100% !important;
-  min-width: 100%;
 }
 .full-height {
   height: 100% !important;
   min-height: 100%;
-}
-.container-fluid {
-  display: flex;
-}
-.container {
-  display: flex;
-  padding: 0px 1rem;
 }
 .page {
   min-height: 100%;
@@ -36,43 +25,6 @@ a {
 .wrapper {
   padding: 1rem 1.5rem;
 }
-.btn {
-  background: transparent;
-  color: white;
-  border: solid;
-  border-width: 1.2px;
-  border-color: white;
-  width: 100%;
-  border-radius: 25px;
-}
-.btn:focus {
-  background: transparent;
-  color: white;
-  border: solid;
-  border-width: 1.2px;
-  border-color: white;
-  outline: none;
-  width: 100%;
-  border-radius: 25px;
-}
-.btn:active {
-  background: transparent;
-  color: white;
-  border: solid;
-  border-width: 1.2px;
-  border-color: white;
-  width: 100%;
-  border-radius: 25px;
-  background-color: teal;
-}
-@font-face {
-  font-family: "IBMPlex"; /*a name to be used later*/
-  src: url("/fonts/IBMPlexMono-BoldItalic.ttf"); /*URL to font*/
-}
-.menu-font {
-  font-family: "IBMPlex";
-  font-size: 1.1rem;
-}
 .row {
   display: flex;
 }
@@ -80,13 +32,43 @@ a {
   display: flex;
   flex-direction: column;
 }
-.self-center {
-  align-self: center;
-}
 .flexwrap {
   flex-wrap: wrap !important;
 }
-.bg-blue {
-  background-color: #165a6b !important;
+.header {
+  background: linear-gradient(to right, #262262 0%, #662d91 100%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 3.5rem;
+}
+.footer {
+  background: linear-gradient(to right, #262262 0%, #662d91 100%);
+  height: 1rem;
+  width: 100%;
+  bottom: 0px;
+  position: fixed;
+}
+.right-triangle-bg {
+  background-image: url("/svg/right-triangle.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.blue-green-gradient-bg {
+  background: linear-gradient(to right, #19b7cb 15%, #39a935 54%);
+}
+.blue-purple-gradient-bg {
+  background: linear-gradient(to right, #262262 0%, #662d91 100%);
+}
+.circle {
+  border-radius: 100%;
+}
+@font-face {
+  font-family: "Lato-Regular";
+  src: url("/fonts/lato/Lato-Regular.ttf");
+}
+@font-face {
+  font-family: "Zian";
+  src: url("/fonts/zian/Zian.ttf");
 }
 </style>

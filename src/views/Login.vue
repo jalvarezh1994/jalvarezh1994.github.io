@@ -1,6 +1,6 @@
 <template>
-  <div class="page bg-gradient">
-    <div class="wrapper" style="text-align:center">
+  <div class="page blue-green-gradient-bg">
+    <div class="wrapper align-text-center right-triangle-bg">
       <img src="/svg/vincet-logo.svg" class="vincet-logo">
       <br>
       <div class="greeting text">
@@ -77,9 +77,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bg-gradient {
-  background: linear-gradient(to right, #19b7cb 15%, #39a935 54%);
-}
 .rounded-border {
   border-radius: 50px;
 }
@@ -116,11 +113,33 @@ export default {
 .input-logo {
   height: 60%;
 }
+.input::placeholder {
+  color: rgb(233, 233, 233);
+}
+$lightenAmount: 10%;
 .sign-in-btn {
   width: 80%;
   background: linear-gradient(to right, #262262 0%, #662d91 100%);
   border: 3px solid rgba(255, 255, 255, 0);
   height: 3rem;
+  border-left: #262262 solid;
+  border-right: #662d91 solid;
+  cursor: pointer;
+}
+@keyframes sign-in- {
+}
+.sign-in-btn:hover {
+  width: 80%;
+  background: linear-gradient(
+    to right,
+    lighten($color: #262262, $amount: $lightenAmount) 0%,
+    lighten($color: #662d91, $amount: $lightenAmount) 100%
+  );
+  border: 3px solid rgba(255, 255, 255, 0);
+  height: 3rem;
+  border-left: lighten($color: #262262, $amount: $lightenAmount) solid;
+  border-right: lighten($color: #662d91, $amount: $lightenAmount) solid;
+  cursor: pointer;
 }
 .sign-in-btn span {
   margin-left: auto;
@@ -134,13 +153,7 @@ export default {
   height: 100% !important;
   justify-content: center;
   align-items: center;
-}
-.footer {
-  background: linear-gradient(to right, #262262 0%, #662d91 100%);
-  height: 1rem;
-  width: 100%;
-  bottom: 0px;
-  position: fixed;
+  user-select: none;
 }
 .vincet-logo {
   display: flex;
@@ -166,18 +179,14 @@ export default {
 }
 .text {
   font-family: "Lato-Regular";
+  user-select: none;
 }
 .register {
   color: #3d2b57;
   font-weight: bold;
   font-size: 1.25rem;
 }
-@font-face {
-  font-family: "Lato-Regular";
-  src: url("/fonts/lato/Lato-Regular.ttf");
-}
-@font-face {
-  font-family: "Zian";
-  src: url("/fonts/zian/Zian.ttf");
+.align-text-center {
+  text-align: center;
 }
 </style>
