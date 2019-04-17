@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Login from './views/Login.vue';
 import LessonBubble from './components/LessonBubble.vue';
 import GoBack from './components/GoBack.vue';
+import SideMenu from './components/SideMenu.vue';
 import AccountButton from './components/AccountButton.vue';
 import TextContent from './components/TextContent.vue';
 import ImageContent from './components/ImageContent.vue';
@@ -12,8 +13,10 @@ import StarRating from 'vue-star-rating';
 import SelectOne from './components/SelectOne.vue';
 
 Vue.use(Router);
+//General
+Vue.component('SideMenu', SideMenu);
+//Lesson
 Vue.component('LessonBubble', LessonBubble);
-
 Vue.component('GoBack', GoBack);
 Vue.component('StarRating', StarRating);
 Vue.component('AccountButton', AccountButton);

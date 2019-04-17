@@ -11,22 +11,26 @@
       <div class="col border-right" style="width: 50%"></div>
       <div class="col" style="width: 50%"></div>
     </div>
-    <button class="btn lesson self-center" @click="goToLesson(topicId, lesson)">
-      <span class="lesson-title">{{lesson.lessonTitle}}</span>
-      <br>
-      <br>
-      <StarRating
-        v-bind:star-size="starRatingProps.starSize"
-        v-bind:show-rating="starRatingProps.showRating"
-        v-bind:max-rating="starRatingProps.maxRating"
-        v-bind:read-only="starRatingProps.readOnly"
-        v-bind:rounded-corners="starRatingProps.roundedCorners"
-        v-bind:rating="getLessonScore"
-        active-color="#ffc65a"
-        border-color="#00"
-        class="my-stars"
-      />
-    </button>
+    <div class="lesson self-center hover-pressed" @click="goToLesson(topicId, lesson)">
+      <div class="col full-width">
+        <div class="row row-center">
+          <span class="lesson-title">{{lesson.lessonTitle}}</span>
+        </div>
+        <div class="row row-center">
+          <StarRating
+            v-bind:star-size="starRatingProps.starSize"
+            v-bind:show-rating="starRatingProps.showRating"
+            v-bind:max-rating="starRatingProps.maxRating"
+            v-bind:read-only="starRatingProps.readOnly"
+            v-bind:rounded-corners="starRatingProps.roundedCorners"
+            v-bind:rating="getLessonScore"
+            active-color="#ffc65a"
+            border-color="#00"
+            class="my-stars"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -103,10 +107,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.lesson {
+  border-radius: 100%;
+  height: 8rem;
+  width: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  background-image: url("/svg/circle-blue-green.svg");
+}
 .lesson-title {
   font-size: 1.2rem;
   text-align: center;
   font-weight: bold;
+  color: white;
 }
 .my-stars {
   justify-content: center !important;
@@ -115,7 +130,7 @@ export default {
   margin-top: 2rem;
 }
 .border-right {
-  border: solid white;
+  border: solid #c8c8c8 2px;
   border-left: 0px;
   border-top: 0px;
   border-bottom: 0px;
@@ -124,21 +139,16 @@ export default {
   display: none !important;
   color: transparent;
 }
-.lesson {
-  border-radius: 100%;
-  height: 8rem;
-  width: 8rem;
-}
 .diag-left {
   height: 2.5rem;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M0 99 L99 0 L100 1 L1 100' fill='white' /></svg>");
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M0 99 L99 0 L100 1 L1 100' fill='c8c8c8' /></svg>");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 100%, auto;
 }
 .diag-right {
   height: 2.5rem;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M1 0 L0 1 L99 100 L100 99' fill='white' /></svg>");
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M1 0 L0 1 L99 100 L100 99' fill='c8c8c8' /></svg>");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 100%, auto;

@@ -23,7 +23,7 @@
           </div>
         </div>
         <br>
-        <div class="sign-in-btn rounded-border margin-centered" type="submit">
+        <div class="sign-in-btn rounded-border margin-centered hover-pressed" type="submit">
           <span class="text btn-text">INGRESAR</span>
         </div>
       </form>
@@ -116,7 +116,6 @@ export default {
 .input::placeholder {
   color: rgb(233, 233, 233);
 }
-$lightenAmount: 10%;
 .sign-in-btn {
   width: 80%;
   background: linear-gradient(to right, #262262 0%, #662d91 100%);
@@ -124,21 +123,6 @@ $lightenAmount: 10%;
   height: 3rem;
   border-left: #262262 solid;
   border-right: #662d91 solid;
-  cursor: pointer;
-}
-@keyframes sign-in- {
-}
-.sign-in-btn:hover {
-  width: 80%;
-  background: linear-gradient(
-    to right,
-    lighten($color: #262262, $amount: $lightenAmount) 0%,
-    lighten($color: #662d91, $amount: $lightenAmount) 100%
-  );
-  border: 3px solid rgba(255, 255, 255, 0);
-  height: 3rem;
-  border-left: lighten($color: #262262, $amount: $lightenAmount) solid;
-  border-right: lighten($color: #662d91, $amount: $lightenAmount) solid;
   cursor: pointer;
 }
 .sign-in-btn span {
@@ -154,6 +138,7 @@ $lightenAmount: 10%;
   justify-content: center;
   align-items: center;
   user-select: none;
+  color: white;
 }
 .vincet-logo {
   display: flex;

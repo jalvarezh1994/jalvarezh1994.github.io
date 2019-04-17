@@ -1,19 +1,19 @@
 <template>
   <div class="page bg-white full-height">
-    <div class="header"></div>
+    <SideMenu/>
     <div class="header-spacer"></div>
     <div class="wrapper">
       <div class="row">
         <div class="col" style="width:45%">
-          <div class="menu-button blue-green-gradient-bg circle">
-            <div class="button-content"></div>
+          <div @click="goTo('/lessons')" class="menu-button hover-pressed">
+            <img class="button-image" src="/svg/lessons.svg" style="width:80%">
           </div>
           <span class="self-center button-text">LECCIONES</span>
         </div>
         <div class="col" style="width:10%"></div>
         <div class="col" style="width:45%">
-          <div class="menu-button blue-green-gradient-bg circle">
-            <div class="button-content"></div>
+          <div @click="goTo('/profile')" class="menu-button hover-pressed">
+            <img class="button-image" src="/svg/profile-logo.svg">
           </div>
           <span class="self-center button-text">PERFIL</span>
         </div>
@@ -21,15 +21,15 @@
       <br>
       <div class="row">
         <div class="col" style="width:45%">
-          <div class="menu-button blue-green-gradient-bg circle">
-            <div class="button-content"></div>
+          <div class="menu-button hover-pressed">
+            <img class="button-image" src="/svg/documentation.svg">
           </div>
-          <span class="self-center button-text">CONTENIDO</span>
+          <span class="self-center button-text">DOCUMENTACIÓN</span>
         </div>
         <div class="col" style="width:10%"></div>
         <div class="col" style="width:45%">
-          <div class="menu-button blue-green-gradient-bg circle">
-            <div class="button-content"></div>
+          <div class="menu-button hover-pressed">
+            <img class="button-image" src="/svg/editor.svg">
           </div>
           <span class="self-center button-text">EDITOR</span>
         </div>
@@ -37,14 +37,13 @@
       <br>
       <div class="row">
         <div class="col" style="width:45%">
-          <div class="menu-button blue-green-gradient-bg circle">
-            <div class="button-content"></div>
+          <div class="menu-button hover-pressed">
+            <img class="button-image" src="/svg/store.svg">
           </div>
           <span class="self-center button-text">TIENDA</span>
         </div>
       </div>
     </div>
-    <div class="footer-menu"></div>
     <footer class="footer"></footer>
   </div>
 </template>
@@ -56,14 +55,9 @@ export default {
     this.$store.commit("setSubjectId", "1");
   },
   methods: {
-    goToLessons() {
+    goTo(directory) {
       setTimeout(() => {
-        this.$router.push("/lessons");
-      }, 150);
-    },
-    goToProfile() {
-      setTimeout(() => {
-        this.$router.push("/profile");
+        this.$router.push(directory);
       }, 150);
     }
   }
@@ -71,25 +65,18 @@ export default {
 </script>
 
 <style scoped>
-.bg-white {
-  background: white;
-}
-.header {
-  background: linear-gradient(to right, #262262 0%, #662d91 100%);
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 3.5rem;
-}
-.header-spacer {
-  height: 3.5rem;
-}
 .menu-button {
   width: 7rem;
   height: 7rem;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  background-image: url("/svg/circle-blue-green.svg");
+}
+.button-image {
+  width: 65%;
 }
 .row {
   justify-content: center;
