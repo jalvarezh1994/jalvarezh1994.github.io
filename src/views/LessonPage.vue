@@ -1,5 +1,7 @@
 <template>
   <div class="page bg-blue full-height">
+    <SideMenu/>
+    <div class="header-spacer"></div>
     <div class="wrapper">
       <div v-for="contentBlock in content">
         <div v-if="isText(contentBlock)">
@@ -19,6 +21,7 @@
         </div>
       </div>
     </div>
+    <footer class="footer"></footer>
   </div>
 </template>
 

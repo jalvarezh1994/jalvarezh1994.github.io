@@ -6,7 +6,7 @@
       <!-- Topic -->
       <div v-for="topic in topics" class="topic-container">
         <div class="col full-width">
-          <div class="topic row row-center">{{topic.topicTitle}}</div>
+          <div class="topic row row-center blue-purple-gradient-bg">{{topic.topicTitle}}</div>
         </div>
         <div class="row" style="flex-wrap: wrap">
           <!-- Lesson -->
@@ -59,12 +59,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .topic {
   font-size: 1.4rem;
   color: white;
   height: 2rem;
-  background-color: #19b7cb;
   display: flex;
   align-items: center;
   justify-content: center;

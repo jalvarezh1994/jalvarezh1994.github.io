@@ -2,11 +2,11 @@
   <router-view/>
 </template>
 
-<style lang="scss">
-$vincet-cian: #19b7cb;
-$vincet-green: #89dc65;
-$vincet-blue: #5f8db5;
-$vincet-gray: #c8c8c8;
+<style lang="less">
+@vincet-cian: #19b7cb;
+@vincet-green: #89dc65;
+@vincet-blue: #5f8db5;
+@vincet-gray: #c8c8c8;
 html,
 body {
   height: 100%;
@@ -63,6 +63,12 @@ a {
 }
 .row-center {
   justify-content: center;
+}
+.row-start-align {
+  align-items: flex-start !important;
+}
+.row-center-align {
+  align-items: center;
 }
 .flexwrap {
   flex-wrap: wrap !important;

@@ -1,12 +1,39 @@
 <template>
   <div class="page bg-blue full-height">
-    <div class="wrapper full-height">
-      <div style="height:25%"></div>
-      <button class="btn lesson-button" style="height:25%" @click="goToLessonPage">Contenido</button>
-      <button class="btn lesson-button" style="height:25%" @click="goToLessonExcercise">Ejercicios</button>
-      <div style="height:25%"></div>
-      <GoBack/>
+    <SideMenu/>
+    <div class="col wrapper-height">
+      <div class="row row-start-align">
+        <div class="col full-width">
+          <div class="header-spacer"></div>
+          <div class="row full-width">
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col wrapper-height full-width">
+          <div class="row row-center row-center-align full-width">
+            <div
+              @click="goToLessonPage"
+              class="btn rounded-border margin-centered hover-pressed"
+              type="submit"
+            >
+              <span class="text btn-text">CONTENIDO</span>
+            </div>
+          </div>
+          <div class="row row-center row-center-align full-width">
+            <div
+              @click="goToLessonExcercise"
+              class="btn rounded-border margin-centered hover-pressed"
+              type="submit"
+            >
+              <span class="text btn-text">EJERCICIOS</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <footer class="footer"></footer>
   </div>
 </template>
 
@@ -29,14 +56,48 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.lesson-button {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
+<style lang="less" scoped>
+.wrapper-height {
+  height: 100%;
+  justify-content: space-evenly;
 }
-.page {
-  overflow: hidden !important;
+.row {
+  height: 50%;
+  align-items: center;
+}
+.btn-text {
+  display: flex;
+  width: 100%;
+  height: 100% !important;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  color: white;
+}
+.rounded-border {
+  border-radius: 50px;
+}
+.btn {
+  width: 80%;
+  height: 60%;
+  background: linear-gradient(to right, #262262 0%, #662d91 100%);
+  border: 3px solid rgba(255, 255, 255, 0);
+  border-left: #262262 solid;
+  border-right: #662d91 solid;
+}
+.btn span {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  font-size: 1.5rem;
+}
+.btn-text {
+  display: flex;
+  width: 100%;
+  height: 100% !important;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  color: white;
 }
 </style>
-

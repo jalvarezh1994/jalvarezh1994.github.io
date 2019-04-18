@@ -50,7 +50,7 @@
 
 <script>
 export default {
-  name: "mainMenu",
+  name: "MainMenu",
   created: function() {
     this.$store.commit("setSubjectId", "1");
   },
