@@ -47,7 +47,7 @@ export default {
     goTo(directory) {
       setTimeout(() => {
         this.$router.push(directory);
-      }, 150);
+      }, this.$linkClickDelay);
     }
   }
 };
@@ -95,6 +95,7 @@ export default {
     color: white;
     padding: 1rem;
     border-bottom: solid #662d91;
+    white-space: nowrap;
   }
 }
 .show {

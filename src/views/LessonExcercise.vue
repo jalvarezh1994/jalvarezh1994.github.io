@@ -1,12 +1,14 @@
 <template>
-  <div class="page bg-blue">
-    <div v-if="isSelectOne(excercise)">
-      <SelectOne
-        v-bind:question="excercise.excerciseObject.question"
-        v-bind:answers="excercise.excerciseObject.answers"
-        v-on:success="addSuccess"
-        v-on:failure="addFailure"
-      />
+  <div class="page bg-blue animated fadeInRight">
+    <div class="wrapper animated fadeInRight">
+      <div v-if="isSelectOne(excercise)">
+        <SelectOne
+          v-bind:question="excercise.excerciseObject.question"
+          v-bind:answers="excercise.excerciseObject.answers"
+          v-on:success="addSuccess"
+          v-on:failure="addFailure"
+        />
+      </div>
     </div>
   </div>
 </template>

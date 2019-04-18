@@ -1,6 +1,6 @@
 <template>
   <div class="page bg-blue">
-    <div class="wrapper" style="height:100%">
+    <div class="wrapper animated fadeInRight" style="height:100%">
       <br>
       <br>
       <br>

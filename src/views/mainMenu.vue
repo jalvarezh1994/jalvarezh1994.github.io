@@ -2,7 +2,7 @@
   <div class="page bg-white full-height">
     <SideMenu/>
     <div class="header-spacer"></div>
-    <div class="wrapper">
+    <div class="wrapper animated fadeInRight">
       <div class="row">
         <div class="col" style="width:45%">
           <div @click="goTo('/lessons')" class="menu-button hover-pressed">
@@ -58,7 +58,7 @@ export default {
     goTo(directory) {
       setTimeout(() => {
         this.$router.push(directory);
-      }, 150);
+      }, this.$linkClickDelay);
     }
   }
 };
@@ -90,5 +90,8 @@ export default {
 }
 .button-text {
   font-weight: bold;
+}
+.fadeInRight {
+  animation: fadeInRight 400ms ease;
 }
 </style>

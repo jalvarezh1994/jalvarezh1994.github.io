@@ -1,13 +1,11 @@
 <template>
   <div class="page bg-blue full-height">
     <SideMenu/>
-    <div class="col wrapper-height">
+    <div class="col wrapper-height animated fadeInRight">
       <div class="row row-start-align">
         <div class="col full-width">
           <div class="header-spacer"></div>
-          <div class="row full-width">
-
-          </div>
+          <div class="row full-width"></div>
         </div>
       </div>
       <div class="row">
@@ -45,12 +43,12 @@ export default {
       this.$store.commit("setPageId", "0");
       setTimeout(() => {
         this.$router.push("/lessonPage");
-      }, 150);
+      }, this.$linkClickDelay);
     },
     goToLessonExcercise() {
       setTimeout(() => {
         this.$router.push("/lessonExcercise");
-      }, 150);
+      }, this.$linkClickDelay);
     }
   }
 };

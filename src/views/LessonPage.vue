@@ -2,7 +2,7 @@
   <div class="page bg-blue full-height">
     <SideMenu/>
     <div class="header-spacer"></div>
-    <div class="wrapper">
+    <div class="wrapper animated fadeInRight">
       <div v-for="contentBlock in content">
         <div v-if="isText(contentBlock)">
           <TextContent v-bind:text="contentBlock.text"/>

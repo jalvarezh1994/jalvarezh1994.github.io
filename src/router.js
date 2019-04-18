@@ -27,6 +27,7 @@ Vue.component('VideoContent', VideoContent);
 Vue.component('AnimationContent', AnimationContent);
 //Excercises
 Vue.component('SelectOne', SelectOne);
+Vue.prototype.$linkClickDelay = 50;
 
 export default new Router({
   routes: [

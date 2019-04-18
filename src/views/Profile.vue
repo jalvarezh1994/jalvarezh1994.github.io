@@ -1,6 +1,6 @@
 <template>
   <div class="page bg-blue">
-    <div class="wrapper">
+    <div class="wrapper animated fadeInRight">
       <span >ProfileId: </span>
       <span>{{profileId}}</span>
       <br>

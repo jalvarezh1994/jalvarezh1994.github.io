@@ -44,6 +44,12 @@ import axios from "axios";
 import querystring from "querystring";
 export default {
   name: "Login",
+  beforeCreate: function() {
+    const isLogged = window.localStorage.getItem("userId");
+    if (isLogged) {
+      this.$router.push("/mainMenu");
+    }
+  },
   methods: {
     login() {
       event.preventDefault();

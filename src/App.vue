@@ -101,6 +101,9 @@ a {
 .circle {
   border-radius: 100%;
 }
+.fadeInRight {
+  animation: fadeInRight 350ms ease;
+}
 @font-face {
   font-family: "Lato-Regular";
   src: url("/fonts/lato/Lato-Regular.ttf");

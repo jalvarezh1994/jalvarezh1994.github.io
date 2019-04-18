@@ -2,7 +2,7 @@
   <div class="page bg-blue full-height">
     <SideMenu/>
     <div class="header-spacer"></div>
-    <div class="wrapper">
+    <div class="wrapper animated fadeInRight">
       <!-- Topic -->
       <div v-for="topic in topics" class="topic-container">
         <div class="col full-width">
