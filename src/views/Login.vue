@@ -1,37 +1,37 @@
 <template>
   <div class="page blue-green-gradient-bg">
     <div class="wrapper align-text-center right-triangle-bg">
-      <img src="/svg/vincet-logo.svg" class="vincet-logo">
-      <br>
+      <img src="/svg/vincet-logo.svg" class="vincet-logo" />
+      <br />
       <div class="greeting text">
         Bienvenido a
         <span class="vincet-text">VINCET</span>
       </div>
-      <br>
+      <br />
       <form @submit="login">
         <div class="input-wrapper rounded-border margin-centered">
           <div class="input-content">
-            <img class="input-logo" src="/svg/user.svg">
-            <input class="input input-text text" type="text" placeholder="E-Mail">
+            <img class="input-logo" src="/svg/user.svg" />
+            <input class="input input-text text" type="text" placeholder="E-Mail" />
           </div>
         </div>
-        <br>
+        <br />
         <div class="input-wrapper rounded-border margin-centered">
           <div class="input-content">
-            <img class="input-logo" src="/svg/lock.svg">
-            <input class="input input-text text" type="password" placeholder="Password">
+            <img class="input-logo" src="/svg/lock.svg" />
+            <input class="input input-text text" type="password" placeholder="Password" />
           </div>
         </div>
-        <br>
+        <br />
         <div class="sign-in-btn rounded-border margin-centered hover-pressed" type="submit">
           <span class="text btn-text">INGRESAR</span>
         </div>
       </form>
-      <br>
+      <br />
       <div class="text">
         O
-        <br>
-        <br>
+        <br />
+        <br />
         <span class="register">REGISTRARSE</span>
       </div>
     </div>
@@ -45,6 +45,7 @@ import querystring from "querystring";
 export default {
   name: "Login",
   beforeCreate: function() {
+    this.$router.push("/mainMenu");
     const isLogged = window.localStorage.getItem("userId");
     if (isLogged) {
     }
