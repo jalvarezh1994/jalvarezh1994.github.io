@@ -47,7 +47,6 @@ export default {
   beforeCreate: function() {
     const isLogged = window.localStorage.getItem("userId");
     if (isLogged) {
-      this.$router.push("/mainMenu");
     }
   },
   methods: {
