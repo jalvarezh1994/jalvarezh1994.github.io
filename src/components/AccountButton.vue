@@ -13,7 +13,7 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .right-align {
   display: flex !important;
   flex-direction: row-reverse !important;

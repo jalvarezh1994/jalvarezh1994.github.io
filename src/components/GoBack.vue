@@ -17,9 +17,6 @@ export default {
 
 <style>
 .go-back {
-  position: fixed;
-  left: 1.5rem;
-  top: 1rem;
 }
 .btn-back {
   background: transparent;
